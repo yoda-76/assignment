@@ -11,11 +11,6 @@ app.use(express.json());
 app.use('/v1/tasks', taskRoutes);
 
 // Connect to MongoDB
-// mongoose.connect('mongodb+srv://yadvendras20:<abcd1234>@cluster0.vo1hymm.mongodb.net/?retryWrites=true&w=majority', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
 
 mongoose.connect('mongodb+srv://yadvendras20:NTydCDcUHAZkG7Rh@cluster0.ieau7ff.mongodb.net/?retryWrites=true&w=majority').then(e=>{
     console.log("success")
@@ -23,12 +18,7 @@ mongoose.connect('mongodb+srv://yadvendras20:NTydCDcUHAZkG7Rh@cluster0.ieau7ff.m
     console.log(err)
 })
 
-// Check the database connection
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-// db.once('open', () => {
-//   console.log('Connected to MongoDB');
-// });
+
 
 // Start the server
 app.listen(PORT, () => {

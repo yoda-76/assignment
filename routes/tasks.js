@@ -6,6 +6,7 @@ const Task = require('../models/task');
 router.post('/', async (req, res) => {
   try {
     if(!req.body.tasks){
+      // if(!req.body.title){res.status(404).send("title cant be empty")}
       const task = await Task.create(req.body);
       res.status(201).json({ [task._id]:task.title });
     }else{
